@@ -12,14 +12,18 @@
 
 // I AM NOT DONE
 
-pub struct ReportCard {
-    pub grade: f32,
+use std::fmt::Display;
+
+pub struct ReportCard<T> {
+    pub grade: T,
     pub student_name: String,
     pub student_age: u8,
 }
 
-impl ReportCard {
-    pub fn print(&self) -> String {
+impl<T> std::fmt::Display for ReportCard<T> {
+    fn print(&self) -> String {
+        Display()
+
         format!("{} ({}) - achieved a grade of {}",
             &self.student_name, &self.student_age, &self.grade)
     }

@@ -15,7 +15,11 @@ trait AppendBar {
 }
 
 impl AppendBar for String {
-    //Add your code here
+    fn append_bar(mut self) -> String {
+        self += "Bar";
+
+        return String::from(self);
+    }
 }
 
 fn main() {
